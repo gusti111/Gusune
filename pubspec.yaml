@@ -1,0 +1,74 @@
+name: gustune
+description: "Gustune — Hybrid Music Player. Classic & Friendly."
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # ─── State Management ───────────────────────────────────────────
+  flutter_riverpod: ^2.5.1          # State management utama
+  riverpod_annotation: ^2.3.5       # Codegen annotation untuk Riverpod
+
+  # ─── Audio Engine ───────────────────────────────────────────────
+  just_audio: ^0.9.40               # Mesin pemutar audio utama
+  just_audio_background: ^0.0.1-beta.13  # Background playback + notifikasi OS
+  audio_service: ^0.18.15           # Integrasi kontrol media sistem operasi
+
+  # ─── Database Lokal (Offline Mode) ──────────────────────────────
+  isar: ^3.1.0+1                    # Database NoSQL super cepat
+  isar_flutter_libs: ^3.1.0+1       # Library native Isar untuk Flutter
+  path_provider: ^2.1.3             # Mendapatkan path direktori aplikasi
+
+  # ─── Keamanan & Autentikasi ─────────────────────────────────────
+  flutter_secure_storage: ^9.2.2    # Penyimpanan token login terenkripsi
+
+  # ─── Jaringan & API ─────────────────────────────────────────────
+  dio: ^5.6.0                       # HTTP client untuk request API
+  youtube_explode_dart: ^2.3.0      # Ekstraksi stream audio dari YouTube
+
+  # ─── File & Media ───────────────────────────────────────────────
+  on_audio_query: ^2.9.0            # Scanner file musik lokal di HP
+  flutter_cache_manager: ^3.4.1     # Cache gambar album art
+  cached_network_image: ^3.3.1      # Widget gambar dengan cache otomatis
+  encrypt: ^5.0.3                   # Enkripsi file audio unduhan
+
+  # ─── UI & Animasi ───────────────────────────────────────────────
+  google_fonts: ^6.2.1              # Tipografi (Nunito + DM Sans)
+  animations: ^2.0.11               # Animasi transisi halaman Material
+  flutter_svg: ^2.0.10+1            # Render ikon SVG kustom
+  percent_indicator: ^4.2.3         # Progress bar storage
+
+  # ─── Utilitas ───────────────────────────────────────────────────
+  rxdart: ^0.27.7                   # Debouncing stream untuk Search
+  intl: ^0.19.0                     # Format tanggal & angka
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  build_runner: ^2.4.11             # Codegen runner (Riverpod + Isar)
+  isar_generator: ^3.1.0+1          # Auto-generate Isar schema
+  riverpod_generator: ^2.4.3        # Auto-generate Riverpod providers
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+
+  fonts:
+    - family: Nunito
+      fonts:
+        - asset: assets/fonts/Nunito-Regular.ttf
+        - asset: assets/fonts/Nunito-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Nunito-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Nunito-ExtraBold.ttf
+          weight: 800
