@@ -26,6 +26,27 @@ The product direction combines a local music library with network-based discover
 - Dependencies for audio playback, background media controls, local media queries, image caching, and network requests.
 - Light and dark theme definitions.
 
+## Application startup and navigation
+
+```mermaid
+flowchart TD
+    A["Launch Flutter application"] --> B["Initialize Isar database"]
+    B --> C["Ensure default playlist exists"]
+    C --> D["Read session token from secure storage"]
+    D --> E{"Existing session token?"}
+    E -->|Yes| F["Open main navigation"]
+    E -->|No| G["Show login screen"]
+    G --> F
+    F --> H["Home"]
+    F --> I["Search"]
+    F --> J["Library"]
+    F --> K["Profile"]
+    I --> L["Browse available media sources"]
+    J --> M["Read locally stored tracks and playlists"]
+```
+
+The diagram describes the current application shell. The presence of audio and media dependencies does not mean every playback or network source workflow is complete.
+
 ## Technology
 
 | Area | Technology |
